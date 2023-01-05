@@ -1,0 +1,36 @@
+def monta_polinomio(coeficientes, n, kreais):
+    exp = []
+    #polinomio = 0
+
+    for j in range(n+1):   #expoentes do polinomio 
+        exp.append(j)
+   # print(exp)
+    #x vai ser direatamente substituido por algum valor k
+    
+    for k in kreais:  
+        i = 0
+        polinomio = 0
+        while 0 <= i <= len(coeficientes)-1:
+            polinomio += coeficientes[i] * k ** exp[i]    # a*x ^exp
+            i += 1
+        print(polinomio)
+    
+def main():
+    coeficientes = []
+    kreais = []
+    n = int(input())
+    a = 1 
+    while 0 < a < n+2:
+        i = float(input())
+        coeficientes.append(i)                                             
+        a += 1
+        
+    k = int(input())
+    b = 1           
+    while 0 < b < k+1:
+        j = float(input())
+        kreais.append(j)                                             
+        b += 1
+    
+    monta_polinomio(coeficientes, n, kreais)
+main()
